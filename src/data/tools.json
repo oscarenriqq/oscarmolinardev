@@ -1,0 +1,42 @@
+[
+    {
+        "tech": "PHP",
+        "logo": "/icons/php.svg"
+    },
+    {
+        "tech": "Python",
+        "logo": "/icons/python.svg"
+    },
+    {
+        "tech": "Laravel",
+        "logo": "/icons/laravel.svg"
+    },
+    {
+        "tech": "Node.js",
+        "logo": "/icons/nodedotjs.svg"
+    },
+    {
+        "tech": "MySQL",
+        "logo": "/icons/mysql.svg"
+    },
+    {
+        "tech": "JavaScript",
+        "logo": "/icons/javascript.svg"
+    },
+    {
+        "tech": "HTML",
+        "logo": "/icons/html5.svg"
+    },
+    {
+        "tech": "CSS",
+        "logo": "/icons/css.svg"
+    },
+    {
+        "tech": "Tailwind CSS",
+        "logo": "/icons/tailwindcss.svg"
+    },
+    {
+        "tech": "Astro",
+        "logo": "/icons/astro.svg"
+    }
+]

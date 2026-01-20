@@ -1,0 +1,16 @@
+[
+    {
+        "title": "BellaBoo Events",
+        "description": "Página de mi emprendimiento",
+        "technologies": ["Astro", "Javascript", "Tailwind"],
+        "link": "https://bellabooevents.com",
+        "date": "Julio 2025"
+    },
+    {
+        "title": "BalooVet",
+        "description": "Aplicación de gestión veterinaria",
+        "technologies": ["PHP", "Laravel", "Tailwind", "Javascript"],
+        "link": "https://baloovet.com",
+        "date": "Octubre 2025"
+    }
+]

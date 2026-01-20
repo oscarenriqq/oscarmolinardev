@@ -1,11 +1,130 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import PhotoGallery from "../components/PhotoGallery.astro";
+import projects from "../data/projects.json";
+import tools from "../data/tools.json";
 ---
 
 <Layout>
-	<Welcome />
+	<header class="mt-4 md:mt-8">
+		<nav
+			class="flex flex-col md:flex-row justify-between gap-4 p-4 md:border md:border-gray-200 md:bg-gray-50"
+		>
+			<!-- <p class="font-bold bg-black text-white px-1 rounded">OM</p> -->
+			 <img src="/logo_om.png" alt="Logo Oscar Molinar" class="w-6 h-6">
+			<ul class="flex flex-col md:flex-row gap-2 md:gap-6">
+				<li><a target="_blank" href="https://www.linkedin.com/in/oscar-molinar-0296">Linkedin</a></li>
+				<li><a target="_blank" href="mailto:oscarmolinar96@gmail.com">Correo</a></li>
+				<li><a target="_blank" href="https://github.com/oscarenriqq/oscarenriqq">GitHub</a></li>
+				<li><a target="_blank" href="#">CV</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<div>
+			<section class="mt-10 md:mt-20">
+				<div
+					class="flex flex-col md:flex-row gap-2 md:gap-6 items-start md:items-center"
+				>
+					<h1 class="font-medium text-2xl md:text-3xl">
+						Oscar Molinar
+					</h1>
+					<h3
+						id="typewriter"
+						class="bg-black text-white text-sm font-bold px-1.5 flex-none"
+					>
+						Desarrollador de aplicaciones web
+					</h3>
+				</div>
+				<div class="mt-6 md:mt-10 flex flex-col gap-10">
+					<p>
+						Lorem ipsum dolor sit, amet consectetur adipisicing
+						elit. Atque labore ab placeat esse dolorem! Iusto
+						blanditiis et officiis nesciunt hic ab voluptatem, at
+						natus impedit recusandae placeat nulla quibusdam
+						necessitatibus.
+					</p>
+					<p>
+						Lorem ipsum dolor sit, amet consectetur adipisicing
+						elit. Atque labore ab placeat esse dolorem! Iusto
+						blanditiis et officiis nesciunt hic ab voluptatem, at
+						natus impedit recusandae placeat nulla quibusdam
+						necessitatibus.
+					</p>
+				</div>
+			</section>
+			<section class="mt-10 md:mt-20">
+				<h2 class="font-medium text-2xl md:text-3xl">Proyectos</h2>
+				<div class="mt-6 md:mt-10 space-y-8">
+					{
+						projects.map((project) => (
+							<div>
+								<h3 class="text-xl md:text-2xl hover:underline">
+									<a
+										href={
+											project.link +
+											"?ref=oscarmolinar.dev"
+										}
+										target="_blank"
+									>
+										{project.title}
+									</a>
+								</h3>
+								<p class="text-sm md:text-base text-gray-600">
+									{project.description}
+								</p>
+								<p class="text-sm text-gray-600">
+									{project.date}
+								</p>
+							</div>
+						))
+					}
+				</div>
+			</section>
+			<section class="mt-10 md:mt-20">
+				<h2 class="font-medium text-2xl md:text-3xl">
+					Caja de herramientas
+				</h2>
+				<div class="mt-6 md:mt-10 space-y-4">
+					{
+						tools.map((tool) => (
+							<div class="flex items-center gap-3">
+								<img
+									src={tool.logo}
+									alt={tool.tech}
+									class="w-6 h-6"
+								/>
+								<span class="font-medium text-gray-600">
+									{tool.tech}
+								</span>
+							</div>
+						))
+					}
+				</div>
+			</section>
+			<section class="mt-10 md:mt-20">
+				<h2 class="font-medium text-2xl md:text-3xl">
+					Cuando no programo
+				</h2>
+				<div class="mt-6 md:mt-10">
+					<PhotoGallery />
+				</div>
+			</section>
+		</div>
+	</main>
+	<footer class="mt-20 text-center text-gray-500 text-sm">
+		<p>Hecho con 2 cafés</p>
+		<p class="mt-2">Oscar Molinar © 2026</p>
+	</footer>
 </Layout>
+
+<script>
+	import Typewriter from "typewriter-effect/dist/core";
+
+	const typewriter = new Typewriter("#typewriter", {
+		delay: 250,
+		cursor: "_",
+	});
+
+	typewriter.typeString("Desarrollador de Aplicaciones").start();
+</script>
