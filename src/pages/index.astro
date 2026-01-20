@@ -8,15 +8,57 @@ import tools from "../data/tools.json";
 <Layout>
 	<header class="mt-4 md:mt-8">
 		<nav
-			class="flex flex-col md:flex-row justify-between gap-4 p-4 md:border md:border-gray-200 md:bg-gray-50"
+			class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-4 md:border md:border-gray-200 md:bg-gray-50 dark:bg-[#574964] dark:border-[#786ca1]"
 		>
-			<!-- <p class="font-bold bg-black text-white px-1 rounded">OM</p> -->
-			 <img src="/logo_om.png" alt="Logo Oscar Molinar" class="w-6 h-6">
+			<img
+				src="/logo_om.png"
+				alt="Logo Oscar Molinar"
+				class="w-6 h-6 dark:hidden"
+			/>
+			<img
+				src="/logo_om_dark.png"
+				alt="Logo Oscar Molinar"
+				class="w-6 h-6 hidden dark:block"
+			/>
 			<ul class="flex flex-col md:flex-row gap-2 md:gap-6">
-				<li><a target="_blank" href="https://www.linkedin.com/in/oscar-molinar-0296">Linkedin</a></li>
-				<li><a target="_blank" href="mailto:oscarmolinar96@gmail.com">Correo</a></li>
-				<li><a target="_blank" href="https://github.com/oscarenriqq/oscarenriqq">GitHub</a></li>
+				<li>
+					<a
+						target="_blank"
+						href="https://www.linkedin.com/in/oscar-molinar-0296"
+						>Linkedin</a
+					>
+				</li>
+				<li>
+					<a target="_blank" href="mailto:oscarmolinar96@gmail.com"
+						>Correo</a
+					>
+				</li>
+				<li>
+					<a
+						target="_blank"
+						href="https://github.com/oscarenriqq/oscarenriqq"
+						>GitHub</a
+					>
+				</li>
 				<li><a target="_blank" href="#">CV</a></li>
+				<li>
+					<button
+						id="theme-toggle"
+						class="w-6 h-6"
+						aria-label="Cambiar tema"
+					>
+						<img
+							src="/icons/sol.png"
+							class="w-full h-full dark:hidden"
+							alt="Modo claro"
+						/>
+						<img
+							src="/icons/luna.png"
+							class="w-full h-full hidden dark:block"
+							alt="Modo oscuro"
+						/>
+					</button>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -31,25 +73,23 @@ import tools from "../data/tools.json";
 					</h1>
 					<h3
 						id="typewriter"
-						class="bg-black text-white text-sm font-bold px-1.5 flex-none"
+						class="bg-black dark:bg-[#574964] text-white dark:text-[#ECECEC] text-sm font-bold px-1.5 flex-none"
 					>
 						Desarrollador de aplicaciones web
 					</h3>
 				</div>
 				<div class="mt-6 md:mt-10 flex flex-col gap-10">
 					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Atque labore ab placeat esse dolorem! Iusto
-						blanditiis et officiis nesciunt hic ab voluptatem, at
-						natus impedit recusandae placeat nulla quibusdam
-						necessitatibus.
+						Disfruto construir aplicaciones desde sus cimientos. Mi
+						zona de confort está en Laravel, PHP y bases de datos,
+						pero no le huyo al frontend cuando el proyecto lo
+						necesita. Lo que más me gusta de mi trabajo es convertir
+						ideas en algo funcional.
 					</p>
 					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Atque labore ab placeat esse dolorem! Iusto
-						blanditiis et officiis nesciunt hic ab voluptatem, at
-						natus impedit recusandae placeat nulla quibusdam
-						necessitatibus.
+						Mis otros intereses: hacer asados, estar al aire libre,
+						jugar videojuegos y el fútbol. Básicamente, cualquier
+						excusa para desconectar y pasarla bien.
 					</p>
 				</div>
 			</section>
@@ -70,10 +110,10 @@ import tools from "../data/tools.json";
 										{project.title}
 									</a>
 								</h3>
-								<p class="text-sm md:text-base text-gray-600">
+								<p class="text-sm md:text-base text-gray-600 dark:text-[#a1a1a1]">
 									{project.description}
 								</p>
-								<p class="text-sm text-gray-600">
+								<p class="text-sm text-gray-600 dark:text-[#a1a1a1]">
 									{project.date}
 								</p>
 							</div>
@@ -94,7 +134,7 @@ import tools from "../data/tools.json";
 									alt={tool.tech}
 									class="w-6 h-6"
 								/>
-								<span class="font-medium text-gray-600">
+								<span class="font-medium text-gray-600 dark:text-[#ECECEC]">
 									{tool.tech}
 								</span>
 							</div>
@@ -112,8 +152,8 @@ import tools from "../data/tools.json";
 			</section>
 		</div>
 	</main>
-	<footer class="mt-20 text-center text-gray-500 text-sm">
-		<p>Hecho con 2 cafés</p>
+	<footer class="mt-20 text-center text-gray-600 dark:text-[#ECECEC]">
+		<p>Hecho con 2 cafés.</p>
 		<p class="mt-2">Oscar Molinar © 2026</p>
 	</footer>
 </Layout>
@@ -127,4 +167,13 @@ import tools from "../data/tools.json";
 	});
 
 	typewriter.typeString("Desarrollador de Aplicaciones").start();
+
+	// Theme toggle
+	const themeToggle = document.getElementById("theme-toggle");
+
+	themeToggle?.addEventListener("click", () => {
+		document.documentElement.classList.toggle("dark");
+		const isDark = document.documentElement.classList.contains("dark");
+		localStorage.setItem("theme", isDark ? "dark" : "light");
+	});
 </script>
