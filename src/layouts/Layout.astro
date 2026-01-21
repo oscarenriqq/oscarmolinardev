@@ -1,15 +1,33 @@
 ---
 import "../styles/global.css";
+
+const {
+	title = "Oscar Molinar | Desarrollador Web",
+	description = "Desarrollador web especializado en Laravel, PHP y bases de datos. Trabajo en proyectos personal y proyectos Freelance."
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/logo_om.png" />
+		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
-		<title>Oscar Molinar | Developer</title>
+		<title>{title}</title>
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSR35SY8Y5"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-JSR35SY8Y5');
+		</script>
 
 		<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 		<script is:inline>
