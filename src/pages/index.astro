@@ -8,7 +8,7 @@ import tools from "../data/tools.json";
 <Layout>
 	<header class="mt-4 md:mt-8">
 		<nav
-			class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-4 md:border md:border-gray-200 md:bg-gray-50 dark:bg-[#574964] dark:border-[#786ca1]"
+			class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-4 md:border md:border-gray-200 bg-gray-50 dark:bg-[#574964] dark:border-[#786ca1]"
 		>
 			<img
 				src="/logo_om.png"
@@ -20,7 +20,7 @@ import tools from "../data/tools.json";
 				alt="Logo Oscar Molinar"
 				class="w-6 h-6 hidden dark:block"
 			/>
-			<ul class="flex flex-col md:flex-row gap-2 md:gap-6">
+			<ul class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
 				<li>
 					<a
 						target="_blank"
@@ -44,17 +44,17 @@ import tools from "../data/tools.json";
 				<li>
 					<button
 						id="theme-toggle"
-						class="w-6 h-6"
+						class="w-5 h-5"
 						aria-label="Cambiar tema"
 					>
 						<img
 							src="/icons/sol.png"
-							class="w-full h-full dark:hidden"
+							class="w-full h-full inline-block dark:hidden my-auto"
 							alt="Modo claro"
 						/>
 						<img
 							src="/icons/luna.png"
-							class="w-full h-full hidden dark:block"
+							class="w-full h-full hidden dark:inline-block"
 							alt="Modo oscuro"
 						/>
 					</button>

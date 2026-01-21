@@ -1,8 +1,8 @@
 [
     {
         "title": "BellaBoo Events",
-        "description": "Página de mi emprendimiento",
-        "technologies": ["Astro", "Javascript", "Tailwind"],
+        "description": "Emprendimiento de alquiler de artículos para fiestas",
+        "technologies": ["Astro", "Javascript", "Tailwind", "NodeJS"],
         "link": "https://bellabooevents.com",
         "date": "Julio 2025"
     },
