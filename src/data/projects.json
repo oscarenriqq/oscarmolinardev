@@ -1,5 +1,12 @@
 [
     {
+        "title": "Cuponex",
+        "description": "Tarjetas de lealtad para emprendedores y pequeños negocios",
+        "technologies": ["PHP", "Laravel", "Vue", "Javascript"],
+        "link": "https://cuponex.app",
+        "date": "Marzo 2026"
+    },
+    {
         "title": "BellaBoo Events",
         "description": "Emprendimiento de alquiler de artículos para fiestas",
         "technologies": ["Astro", "Javascript", "Tailwind", "NodeJS"],
