@@ -1,9 +1,9 @@
 [
     {
-        "title": "Cuponex",
+        "title": "VoyVengo",
         "description": "Tarjetas de lealtad para emprendedores y pequeños negocios",
         "technologies": ["PHP", "Laravel", "Vue", "Javascript"],
-        "link": "https://cuponex.app",
+        "link": "https://voyvengo.app",
         "date": "Marzo 2026"
     },
     {
